@@ -230,7 +230,7 @@
                 'message': comment,
                 'roomId': room
             };
-            fetch('http://localhost/kuppi/Ratchet-with-chat-room/Main/SendPrivate.php', {
+            fetch('http://localhost/Ratchet-with-chat-room/Main/SendPrivate.php', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

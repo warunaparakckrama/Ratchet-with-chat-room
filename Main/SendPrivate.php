@@ -11,7 +11,7 @@ $message = $_POST['message'];
 $user = $_SESSION['Name'];
 $roomId = $_POST['roomId'];
 
-$sql = "INSERT INTO PersonalChatRecord (Connection, SentBy, Message) VALUES ('$roomId', '$user', '$message')";
+$sql = "INSERT INTO personalchatrecord (Connection, SentBy, Message) VALUES ('$roomId', '$user', '$message')";
 
 $con->query($sql);
 if ($con->affected_rows > 0) {
