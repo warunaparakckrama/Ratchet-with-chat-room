@@ -17,7 +17,7 @@
     <?php
 
     session_start();
-    $con = new mysqli("localhost", "test", "test", "ratchet");
+    $con = new mysqli("localhost", "root", "", "ratchet");
 
     if ($con->connect_error) {
         die("Connection failed: " . $con->connect_error);

@@ -1,7 +1,7 @@
 <?php
 session_start();
 $_POST = json_decode(file_get_contents('php://input'), true);
-$con = new mysqli("localhost", "test", "test", "ratchet");
+$con = new mysqli("localhost", "root", "", "ratchet");
 if(!isset($_POST)){
     $array['Status']= "Post not set";
     echo json_encode($array);

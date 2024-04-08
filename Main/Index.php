@@ -24,10 +24,10 @@
             echo "Logged in as " . $_SESSION['Name'];
 
 
-            echo " <a href='http://localhost/kuppi/Ratchet-with-chat-room/Main/Logout.php'>Logout</a>";
+            echo " <a href='http://localhost/Ratchet-with-chat-room/Main/Logout.php'>Logout</a>";
         } else {
             echo "Not logged in ";
-            echo "<a href='http://localhost/kuppi/Ratchet-with-chat-room/Main/Login.php'>Login</a>";
+            echo "<a href='http://localhost/Ratchet-with-chat-room/Main/Login.php'>Login</a>";
         }
 
         echo "
@@ -36,7 +36,7 @@
                 <div class='col-6'>
         ";
 
-        $con = new mysqli("localhost", "test", "test", "ratchet");
+        $con = new mysqli("localhost", "root", "", "ratchet");
         if ($con->connect_error) {
             die("Connection failed: " . $con->connect_error);
         }
@@ -45,7 +45,7 @@
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 if ($row['Name'] != $_SESSION['Name']) {
-                    echo "<button class='btn btn-primary rounded-pill shadow col-4 ' onclick='window.location.href = \"http://localhost/kuppi/Ratchet-with-chat-room/Main/chatroom.php?id=" . $row['UserId'] . "\"'>" . $row['Name'] . "</button>";
+                    echo "<button class='btn btn-primary rounded-pill shadow col-4 ' onclick='window.location.href = \"http://localhost/Ratchet-with-chat-room/Main/chatroom.php?id=" . $row['UserId'] . "\"'>" . $row['Name'] . "</button>";
                 }
             }
         } else {

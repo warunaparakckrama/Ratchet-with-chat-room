@@ -4,13 +4,13 @@
 <?php
 session_start();
 if (isset($_SESSION['Name'])) {
-    header("Location: http://localhost/kuppi/Ratchet-with-chat-room/Main/Index.php");
+    header("Location: http://localhost/Ratchet-with-chat-room/Main/Index.php");
 } else {
     if (isset($_POST['username'])) {
         $uname = $_POST['username'];
         $pass = $_POST['password'];
 
-        $con = new mysqli("localhost", "test", "test", "ratchet");
+        $con = new mysqli("localhost", "root", "", "ratchet");
 
         if ($con->connect_error) {
             die("Connection failed: " . $con->connect_error);
@@ -23,7 +23,7 @@ if (isset($_SESSION['Name'])) {
             $_SESSION['Id'] = $result['UserId'];
             echo "Logged in";
             echo $_SESSION['Name'];
-            header("Location: http://localhost/kuppi/Ratchet-with-chat-room/Main/Index.php");
+            header("Location: http://localhost/Ratchet-with-chat-room/Main/Index.php");
         } else {
             echo "Wrong username or password";
         }
